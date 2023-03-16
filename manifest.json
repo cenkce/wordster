@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Wordster Extension",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus",
+    "browsingData",
+    "browserAction",
+    "scripting",
+    "webNavigation",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/background/SeviceWorker.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/foreground/content.ts"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "24": "logo.png"
+    }
+  }
+}

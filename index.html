@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <template id="main-layout">
+      <style>
+        main {
+          padding: 15px;
+          width: 300px;
+          border: 0.5px solid #7f7f7f;
+          border-radius: 10px;
+        }
+
+        .main-layout-label {
+        }
+        ::slotted(*) { font-weight: bold; } 
+      </style>
+      <main class="main">
+        <h3 class="main-layout-label"><slot name="label"><span>None</span></slot></h3>
+      </main>
+    </template>
+    <main-layout>
+      <style>
+        span {
+        }
+      </style>
+      <span slot="label">Hello World</span>
+    </main-layout>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
